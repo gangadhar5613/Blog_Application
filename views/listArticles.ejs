@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/tailwind.css">
+</head>
+<body>
+    <article class="bg-local h-screen bg-cover " style="background-image: url(/images/bg-2.jpg)">
+        <section class="articles-list-header bg-gray-900">
+            <h2 class="flex items-center justify-center p-3  text-white text-3xl font-bold ">List of all blogs</h2>
+        </section>
+        <section class="bg-gray-900 flex justify-end py-1">
+            <a class="text-white text-2xl" href="/">Home</a>
+        </section>
+        <section class=" flex flex-row flex-wrap">
+         <!-- <% articles.forEach( article => { %> -->
+            <section class="articles-list-section flex flex-col  inline-block card max-w-xs bg-gray-900 m-4 shadow-md    ">
+                    <div class="article-box  max-w-md ">
+                        <img class="w- " src="/images/img-1.jpg" alt="nature image">
+                    </div>
+                    <div class=" flex flex-col bg-white p-4 max-w-md bg-opacity-90 group hover:bg-white hover:shadow-lg hover:border-transparent ">
+                        <h2 class="text-2xl font-bold text-green-700 py-3 "><a href="/articles/<%= article.id%>"><%= article.title %></a></h2>
+                        <p class="truncate text-blue-800 py-3 text-1xl font-semibold "><%= article.description.substring(0,70) %></p>
+                        <h3 class="py-3 text-red-600 text-1xl font-bold"><%= article.tags%></h3>
+                    </div>
+            </section> 
+         <!-- <%  })%> -->
+        </section>
+    </article>
+</body>
+</html>

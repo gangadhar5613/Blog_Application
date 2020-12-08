@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Article</title>
+    <link rel="stylesheet" href="/stylesheets/tailwind.css">
+</head>
+<body>
+    <article class=" h-screen  bg-cover flex flex-col items-center justify-center"   style="background-image: url(/images/bg-4.jpg) ">
+        <section>
+            <h3 class="text-3xl text-center font-bold bg-yellow-400 p-4 ">Update Article</h3>
+        </section>
+        <section class="article-form-section  p-3 py-10 w-full ">
+            <form action="/articles/<%= article.id %>" method="POST" class=" flex flex-col items-center justify-center  rounded    w-full   ">
+                <input type="text" name="title" value="<%= article.title %>" id="title" class="w-1/2 p-2 m-1 rounded">
+                <textarea name="description" id="description" cols="30" rows="10" class="w-1/2 p-2 m-1 rounded "  ><%= article.description %></textarea>
+                <input type="text" name="tags" id="tags" value="<%= article.tags %>" class="w-1/2 p-2 m-1 rounded">
+                <!-- <input type="hidden" name="authorId" id="authorId"> -->
+                <input type="submit" value="Update Blog" class = 'create-blog-btn w-40 py-2 my-2 rounded hover:bg-gray-800 hover:text-white px-3'>
+            </form>
+        </section>
+    </article>
+</body>
+</html>
