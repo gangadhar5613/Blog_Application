@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/tailwind.css">
 </head>
 <body>
+
     <section class="bg-gray-800">
         <nav class="flex flex-end justify-end">
             <ul class="text-white text-2xl p-2 flex flex-row items-center  ">
@@ -27,7 +28,11 @@
                 </div>
                 <div class="py-1  px-2 bg-gray-800 text-white ">
                     <h2 class="text-1xl underline font-semibold py-2">Tags:</h2>
-                    <h2 class=""><%= article.tags%></h2>
+                    <div class="flex flex-row flex-wrap ">
+                     <% article.tags.forEach(tag => { %>
+                          <h3 class="bg-blue-500 p-2 mx-1 text-1xl rounded"><%= tag %></h3>
+                    <%  }) %>
+                    </div>
                 </div>
             </section>
             <section class="buttons-edit p-2 py-3 text-center">

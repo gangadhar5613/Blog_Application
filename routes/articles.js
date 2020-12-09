@@ -13,9 +13,12 @@ router.get('/new',(req,res) => {
 })
 
 router.post("/", (req, res, next) => {
+  
+  req.body.tags = req.body.tags.split(" ");
   Article.create(req.body, (err, createdArticle) => {
     if (err) return next(err);
     res.redirect("/articles")
+    
   })
 });
 
